@@ -13,6 +13,8 @@ export default Component.extend({
       if (!(data.username)) {
         this.get('errorHandler').handleError(new Error('shib302'));
       }
+    }).fail(function () {
+      this.get('errorHandler').handleError(new Error('shib302'));
     });
   }
 });

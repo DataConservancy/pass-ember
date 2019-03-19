@@ -14,6 +14,9 @@ export default Route.extend({
         transition.abort();
         this.get('errorHandler').handleError(new Error('shib302'));
       }
+    }).fail(function () {
+      transition.abort();
+      this.get('errorHandler').handleError(new Error('shib302'));
     });
   }
 });
